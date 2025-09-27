@@ -6,10 +6,9 @@
 
 
 ## FORMULA:
-P = I<sup>2</sup>R
-<br> P --> Power (in watts)
-<br> I --> Intensity
-<br> R --> Resistance
+BMI = W/H<sup>2</sup>
+<br> H --> Height (M)
+<br> I --> Weight (Kg)
 
 ## DESIGN STEPS:
 
@@ -32,13 +31,40 @@ Create a HTML file to implement form based input and output.
 Publish the website in the given URL.
 
 ## PROGRAM :
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+</head>
+<body bgcolor="#03FFCD">
+    <center>
+        <h2>BMI Calculator</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <label>Height (m):</label><br>
+            <input type="text" name="height"><br><br>
+            <label>Weight (kg):</label><br>
+            <input type="text" name="weight"><br><br>
+            <button type="submit">Calculate</button>
+        </form>
 
+        
+
+        {% if BMI %}
+            <h3>Your BMI is: {{ BMI }}</h3>
+        {% endif %}
+    </center>
+</body>
+</html>
+```
 
 ## SERVER SIDE PROCESSING:
 
+![alt text](<Screenshot 2025-09-27 161736.png>)
 
 ## HOMEPAGE:
-
+![alt text](<Screenshot 2025-09-27 160929.png>)
 
 ## RESULT:
 The program for performing server side processing is completed successfully.
